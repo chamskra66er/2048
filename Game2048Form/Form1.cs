@@ -15,7 +15,31 @@ namespace Game2048Form
         public Form1()
         {
             InitializeComponent();
+            CustomisizeDesign();
         }
+        //added for designing
+        private void CustomisizeDesign()
+        {
+            panel1.Visible = false;
+        }
+        private void HideSubMenu()
+        {
+            if (panel1.Visible)
+            {
+                panel1.Visible = false;
+            }
+        }
+        private void ShowSubMenu(Panel subMenu)
+        {
+            if (!subMenu.Visible)
+            {
+                HideSubMenu();
+                subMenu.Visible = true;
+            }
+            else subMenu.Visible = false;
+        }
+
+
         Button[,] buttons;
         Random random = new Random();
 
@@ -398,51 +422,45 @@ namespace Game2048Form
                 {
                     buttons[i, j].Enabled = false;
                     buttons[i,j].FlatAppearance.BorderSize = 0;
-                    buttons[i, j].FlatStyle = FlatStyle.Flat;
-                    
-
-
+                    buttons[i, j].FlatStyle = FlatStyle.Flat;                   
                 }
-            }
-            
+            }            
             AddRandomumber();
             AddRandomumber();          
             ConvertNums();
-
-        }
-
-       
-
-
+        }       
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            HideSubMenu();
+            panel2.BringToFront();
+
             e.Handled = true;
 
             switch (e.KeyCode)
             {
-                case Keys.Right:
+                case Keys.D:
 
                     Rightt();
                     ConvertNums();
                     CheckWin();
                     break;
 
-                case Keys.Left:
+                case Keys.A:
                     
                     Leftt();
                     ConvertNums();
                     CheckWin();
                     break;
 
-                case Keys.Up:
+                case Keys.W:
 
                    Up();
                     ConvertNums();
                     CheckWin();
                     break;
 
-                case Keys.Down:
+                case Keys.S:
                    Down();
                     ConvertNums();
                     
@@ -457,13 +475,18 @@ namespace Game2048Form
             
 
         }
+        private void button17_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panel1);
+            panel1.BringToFront();
+        }
 
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button18_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button19_Click(object sender, EventArgs e)
         {
             this.Close();
         }
