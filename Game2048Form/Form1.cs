@@ -80,7 +80,7 @@ namespace Game2048Form
                     if (nums[i + 1, j + 1] <= 32 && nums[i + 1, j + 1] > 0)
                     {
                         buttons[i, j].Text = "" + nums[i + 1, j + 1];
-                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 15.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
+                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 10.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
                         buttons[i, j].BackColor = Color.Green;
                     }
                     if (nums[i + 1, j + 1] <= 256 && nums[i + 1, j + 1] > 32)
@@ -463,8 +463,6 @@ namespace Game2048Form
                 case Keys.S:
                    Down();
                     ConvertNums();
-                    
-
                     CheckWin();
                     break;
                     
@@ -478,7 +476,7 @@ namespace Game2048Form
         private void button17_Click(object sender, EventArgs e)
         {
             ShowSubMenu(panel1);
-            panel1.BringToFront();
+            panel1.BringToFront();            
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -489,6 +487,11 @@ namespace Game2048Form
         private void button19_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
