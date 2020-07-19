@@ -22,6 +22,7 @@ namespace Game2048Form
         {
             panel1.Visible = false;
         }
+        public string name;
         private void HideSubMenu()
         {
             if (panel1.Visible)
@@ -107,8 +108,10 @@ namespace Game2048Form
                 for (int j = 0; j < mapSize; j++)
                 {
                     if (nums[i + 1, j + 1] == 2048)
-                    { MessageBox.Show("Поздравляю. Вы выиграли!\n"+"Ваш счет: "+value, "Сообщение");
-                        Application.Restart();
+                    {
+                        MessageBox.Show("Поздравляю. Вы выиграли "+"со счетом: "+value, "Сообщение");
+
+                        //Application.Restart();
                     }
                 }
             }
@@ -367,7 +370,15 @@ namespace Game2048Form
         {
             if (isGameOver)
             {
-                MessageBox.Show("Вы проиграли\n"+"Ваш счет: "+value, "Сообщение");
+                var message = MessageBox.Show("Вы проиграли"+"со счетом: "+value+"\n. Хотите сохранить результат?", "Сообщение",
+                    MessageBoxButtons.YesNo);
+                if(message == DialogResult.Yes)
+                {
+                    var inputForm = new InputForm();
+                    inputForm.score = value.ToString();
+                    inputForm.ShowDialog();
+                }
+
                 return isGameOver;
             }
             else

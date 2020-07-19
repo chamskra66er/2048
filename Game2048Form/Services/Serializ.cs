@@ -10,17 +10,17 @@ using Newtonsoft.Json;
 
 namespace Game2048Form.Services
 {
-    public class Serializiation
+    public class Serializ
     {
         private readonly Gamer _gamer;
         private readonly List<Gamer> _gamers;
         private readonly string path = Environment.CurrentDirectory + @"\gamers.json";
-        public Serializiation()
+        public Serializ()
         {
             _gamer = new Gamer();
             _gamers = new List<Gamer>();
         }
-        public Serializiation(List<Gamer> gamers)
+        public Serializ(List<Gamer> gamers)
         {
             _gamers = gamers;
         }
