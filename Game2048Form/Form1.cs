@@ -45,7 +45,7 @@ namespace Game2048Form
 
         bool isGameOver;
         bool moved;
-       const int  mapSize = 4;
+        const int  mapSize = 4;
         int value = 0;
         int[,] nums = new int[,] { {0, 0, 0, 0, 0, 0 },{0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0 }, };
       
