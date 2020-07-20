@@ -502,7 +502,8 @@ namespace Game2048Form
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-
+            var historyForm = new HistoryForm();
+            historyForm.ShowDialog();
         }
     }
 
