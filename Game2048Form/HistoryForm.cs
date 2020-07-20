@@ -27,21 +27,42 @@ namespace Game2048Form
         }
         private void CreateGamersControls(List<Gamer> gamers)
         {
-            int x = 55;
-            int y = 22;
+            int x = 10;
+            int y = 10;
+            int x1 = 10;
+            int y1 = 10;
 
             foreach (var item in gamers)
             {
                 Label label = new Label();
                 label.Left = x;
                 label.Top = y;
-                label.Text = item.Name + " - " + item.Score;
+                label.Text = item.Name;
                 label.AutoSize = true;
                 label.ForeColor = System.Drawing.Color.White;
-                label.Font = new Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-
+                label.Font = new Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 panel1.Controls.Add(label);
-                y += label.Height + 10;
+                y += label.Height + 3;
+
+                Label label1 = new Label();
+                label1.Left = x;
+                label1.Top = y;
+                label1.Text = item.Score;
+                label1.AutoSize = true;
+                label1.ForeColor = System.Drawing.Color.White;
+                label1.Font = new Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                panel1.Controls.Add(label1);
+                y += label1.Height + 10;
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Left = x1+55;
+                pictureBox.Top = y1;
+                pictureBox.Size = new Size(25,25);
+                pictureBox.Image = Properties.Resources.korona_50;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                panel1.Controls.Add(pictureBox);
+                y1 += label.Height + 29;
+
             }
         }
     }
