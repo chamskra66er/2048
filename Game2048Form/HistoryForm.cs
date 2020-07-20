@@ -23,9 +23,9 @@ namespace Game2048Form
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-            CreateGamersControls(_serialize.GetAllGamers());
+            CreateGamersControls(_serialize.GetAllByOrder());
         }
-        private void CreateGamersControls(List<Gamer> gamers)
+        private void CreateGamersControls(IEnumerable<Gamer> gamers)
         {
             int x = 10;
             int y = 10;
@@ -34,6 +34,8 @@ namespace Game2048Form
 
             foreach (var item in gamers)
             {
+                var level = item.Score;
+
                 Label label = new Label();
                 label.Left = x;
                 label.Top = y;
@@ -53,16 +55,24 @@ namespace Game2048Form
                 label1.Font = new Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 panel1.Controls.Add(label1);
                 y += label1.Height + 10;
+                
 
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.Left = x1+55;
+                pictureBox.Left = x1 + 155;
                 pictureBox.Top = y1;
-                pictureBox.Size = new Size(25,25);
-                pictureBox.Image = Properties.Resources.korona_50;
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.Size = new Size(25, 25);                
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;              
+                
+                if (Convert.ToInt32(level)>=700)
+                {
+                    pictureBox.Image = Properties.Resources.korona_50;
+                }
+                else
+                {
+                    pictureBox.Image = Properties.Resources.zvezda_50;
+                }
                 panel1.Controls.Add(pictureBox);
                 y1 += label.Height + 29;
-
             }
         }
     }

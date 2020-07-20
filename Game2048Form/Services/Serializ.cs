@@ -88,6 +88,12 @@ namespace Game2048Form.Services
             //} 
             return model;
         }
+        public IEnumerable<Gamer> GetAllByOrder()
+        {
+            var model = GetAllGamers();
+
+            return model.OrderByDescending(x => x.Score);
+        }
         
 
     }
