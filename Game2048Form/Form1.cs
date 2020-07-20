@@ -370,7 +370,7 @@ namespace Game2048Form
         {
             if (isGameOver)
             {
-                var message = MessageBox.Show("Вы проиграли"+"со счетом: "+value+"\n. Хотите сохранить результат?", "Сообщение",
+                var message = MessageBox.Show("Вы проиграли"+"со счетом: "+value+". \nХотите сохранить результат?", "Сообщение",
                     MessageBoxButtons.YesNo);
                 if(message == DialogResult.Yes)
                 {

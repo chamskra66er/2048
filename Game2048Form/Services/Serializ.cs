@@ -26,13 +26,69 @@ namespace Game2048Form.Services
         }
         public void DataSave(Gamer gamer)
         {
-            File.WriteAllText(path, JsonConvert.SerializeObject(gamer));
+            //string name = gamer.Name;
+            //var model = GetAllGamers().Where(x=>x.Name==name);
+
+            var newGamer = new Gamer()
+            {
+                Name = gamer.Name,
+                Score = gamer.Score,
+                DateTimes = DateTime.Now
+            };
+
+            using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                file.Seek(-1, SeekOrigin.End);
+                using (StreamWriter writer = new StreamWriter(file))
+                {
+                    writer.Write(",");
+                    writer.WriteAsync(JsonConvert.SerializeObject(newGamer));
+                    writer.Write("]");
+                }
+            }
+
+            //if (model.Count()==0)
+            //{
+            //    using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
+            //    {
+            //        file.Seek(-1, SeekOrigin.End);
+            //        using (StreamWriter writer = new StreamWriter(file))
+            //        {
+            //            writer.Write(",");
+            //            writer.WriteAsync(JsonConvert.SerializeObject(gamer));
+            //            writer.Write("]");
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    var found = GetAllGamers().Find(x => x.Name == name);
+            //    found.Score = gamer.Score;
+
+            //    using (FileStream file = new FileStream(path, FileMode.Create))
+            //    {
+            //        using (StreamWriter writer = new StreamWriter(file))
+            //        {
+            //            writer.Write("[");
+            //            writer.WriteAsync(JsonConvert.SerializeObject(GetAllGamers()));
+            //            writer.Write("]");
+            //        }
+            //    }
+            //}
+
         }
         public List<Gamer> GetAllGamers()
         {
             var model = JsonConvert.DeserializeObject<List<Gamer>>(File.ReadAllText(path));
+            //using (StreamReader reader = new StreamReader(path))
+            //{
+            //    var model = JsonConvert.DeserializeObject<List<Gamer>>(reader.ReadToEnd());
+            //    reader.Dispose();
+            //    return model;
+            //} 
             return model;
         }
+        
 
     }
 }

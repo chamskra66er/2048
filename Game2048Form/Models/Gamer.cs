@@ -10,5 +10,6 @@ namespace Game2048Form.Models
     {
         public string Name { get; set; }
         public string Score { get; set; }
+        public DateTime DateTimes { get; set; }
     }
 }
