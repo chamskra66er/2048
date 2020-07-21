@@ -34,7 +34,7 @@ namespace Game2048Form
             var gamer = new Gamer()
             {
                 Name = textBox1.Text,
-                Score = label3.Text
+                Score = Convert.ToInt32(label3.Text)
             };
             var model = new Serializ();
             model.DataSave(gamer);
