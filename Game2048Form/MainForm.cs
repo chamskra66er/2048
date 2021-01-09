@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibGame2048;
-using System.Collections.Generic;
 
 namespace Game2048Form
 {
@@ -50,7 +49,6 @@ namespace Game2048Form
         }
         private void UpdateButtons()
         {
-            string[,] maps = new string[size, size];
             for (int i = 0; i < model.size; i++)
             {
                 for (int j = 0; j < model.size; j++)
@@ -64,25 +62,27 @@ namespace Game2048Form
                     else if(number>0&&number<=64)
                     {
                         buttons[i, j].Text = number.ToString();
-                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
                         buttons[i, j].BackColor = Color.Green;
                     }
                     else if (number > 64 && number <= 512)
                     {
                         buttons[i, j].Text = number.ToString();
-                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
                         buttons[i, j].BackColor = Color.Orange;
                     }
-                    else if(number>512)
+                    else if(number>512&&number<2048)
                     {
-                        buttons[i, j].Text = number.ToString();
-                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
+                        buttons[i, j].Text = number.ToString();                        
                         buttons[i, j].BackColor = Color.Red;
                     }
+                    else if(number >= 2048)
+                    {
+                        buttons[i, j].Text = number.ToString();
+                        buttons[i, j].BackColor = Color.Black;
+                    }
+                    buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
                 }
             }
-
-            
+            label1.Text = Model.score.ToString();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -92,24 +92,33 @@ namespace Game2048Form
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
+            if (e.KeyCode == Keys.Enter) return;
+
+            if (!model.IsGameOver())
             {
-                case Keys.Up:
-                    model.Up();
-                    break;
-                case Keys.Down:
-                    model.Down();
-                    break;
-                case Keys.Left:
-                    model.Left();
-                    break;
-                case Keys.Right:
-                    model.Right();
-                    break;
-                default:
-                    break;
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        model.Up();
+                        break;
+                    case Keys.Down:
+                        model.Down();
+                        break;
+                    case Keys.Left:
+                        model.Left();
+                        break;
+                    case Keys.Right:
+                        model.Right();                      
+                        break;
+                    default:
+                        break;
+                }
+                UpdateButtons();
             }
-            UpdateButtons();
+            else
+            {
+                MessageBox.Show("Game over...");
+            }
         }
     }
 }

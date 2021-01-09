@@ -45,6 +45,7 @@ namespace Game2048Form
             this.btn15 = new System.Windows.Forms.Button();
             this.btn14 = new System.Windows.Forms.Button();
             this.btn13 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn1
@@ -239,11 +240,21 @@ namespace Game2048Form
             this.btn13.TabIndex = 12;
             this.btn13.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 372);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 475);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn16);
             this.Controls.Add(this.btn15);
             this.Controls.Add(this.btn14);
@@ -266,6 +277,7 @@ namespace Game2048Form
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -287,5 +299,6 @@ namespace Game2048Form
         private System.Windows.Forms.Button btn15;
         private System.Windows.Forms.Button btn14;
         private System.Windows.Forms.Button btn13;
+        private System.Windows.Forms.Label label1;
     }
 }
