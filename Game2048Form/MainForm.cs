@@ -17,12 +17,30 @@ namespace Game2048Form
         const int size = 4;
         private Model model;
         private bool isActive = true;
+        private Button[,] buttons;
 
         public MainForm()
         {
             InitializeComponent();
 
-            model =new Model(size);                     
+            model =new Model(size);
+            buttons = new Button[size, size];
+            buttons[0, 0] = btn1;
+            buttons[0, 1] = btn2;
+            buttons[0, 2] = btn3;
+            buttons[0, 3] = btn4;
+            buttons[1, 0] = btn5;
+            buttons[1, 1] = btn6;
+            buttons[1, 2] = btn7;
+            buttons[1, 3] = btn8;
+            buttons[2, 0] = btn9;
+            buttons[2, 1] = btn10;
+            buttons[2, 2] = btn11;
+            buttons[2, 3] = btn12;
+            buttons[3, 0] = btn13;
+            buttons[3, 1] = btn14;
+            buttons[3, 2] = btn15;
+            buttons[3, 3] = btn16;
         }
 
         private void Start()
@@ -38,93 +56,33 @@ namespace Game2048Form
                 for (int j = 0; j < model.size; j++)
                 {
                     int number = model.GetMap(j, i);
-                    if (number != 0)
-                        maps[i, j] = number.ToString();
-                    else
-                        maps[i, j] = "";
+                    if (number == 0)
+                    {
+                        buttons[i, j].Text = "";
+                        buttons[i, j].BackColor = Color.Green;
+                    }
+                    else if(number>0&&number<=64)
+                    {
+                        buttons[i, j].Text = number.ToString();
+                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
+                        buttons[i, j].BackColor = Color.Green;
+                    }
+                    else if (number > 64 && number <= 512)
+                    {
+                        buttons[i, j].Text = number.ToString();
+                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
+                        buttons[i, j].BackColor = Color.Orange;
+                    }
+                    else if(number>512)
+                    {
+                        buttons[i, j].Text = number.ToString();
+                        buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
+                        buttons[i, j].BackColor = Color.Red;
+                    }
                 }
             }
 
-
-            btn1.Font = new System.Drawing.Font("Courier New", 16.0F, btn1.Font.Style ^ FontStyle.Bold);
-            btn1.BackColor = Color.Green;
-            btn1.ForeColor = Color.White;
-            btn1.Text = maps[0, 0];
-
-            btn2.Font = new System.Drawing.Font("Courier New", 16.0F, btn2.Font.Style ^ FontStyle.Bold);
-            btn2.BackColor = Color.Green;
-            btn2.ForeColor = Color.White;
-            btn2.Text = maps[0, 1];
-
-            btn3.Font = new System.Drawing.Font("Courier New", 16.0F, btn3.Font.Style ^ FontStyle.Bold);
-            btn3.BackColor = Color.Green;
-            btn3.ForeColor = Color.White;
-            btn3.Text = maps[0, 2];
-
-            btn4.Font = new System.Drawing.Font("Courier New", 16.0F, btn4.Font.Style ^ FontStyle.Bold);
-            btn4.BackColor = Color.Green;
-            btn4.ForeColor = Color.White;
-            btn4.Text = maps[0, 3];
-
-            btn5.Font = new System.Drawing.Font("Courier New", 16.0F, btn5.Font.Style ^ FontStyle.Bold);
-            btn5.BackColor = Color.Green;
-            btn5.ForeColor = Color.White;
-            btn5.Text = maps[1, 0];
-
-            btn6.Font = new System.Drawing.Font("Courier New", 16.0F, btn6.Font.Style ^ FontStyle.Bold);
-            btn6.BackColor = Color.Green;
-            btn6.ForeColor = Color.White;
-            btn6.Text = maps[1, 1];
-
-            btn7.Font = new System.Drawing.Font("Courier New", 16.0F, btn7.Font.Style ^ FontStyle.Bold);
-            btn7.BackColor = Color.Green;
-            btn7.ForeColor = Color.White;
-            btn7.Text = maps[1, 2];
-
-            btn8.Font = new System.Drawing.Font("Courier New", 16.0F, btn8.Font.Style ^ FontStyle.Bold);
-            btn8.BackColor = Color.Green;
-            btn8.ForeColor = Color.White;
-            btn8.Text = maps[1, 3];
-
-            btn9.Font = new System.Drawing.Font("Courier New", 16.0F, btn9.Font.Style ^ FontStyle.Bold);
-            btn9.BackColor = Color.Green;
-            btn9.ForeColor = Color.White;
-            btn9.Text = maps[2, 0];
-
-            btn10.Font = new System.Drawing.Font("Courier New", 16.0F, btn10.Font.Style ^ FontStyle.Bold);
-            btn10.BackColor = Color.Green;
-            btn10.ForeColor = Color.White;
-            btn10.Text = maps[2, 1];
-
-            btn11.Font = new System.Drawing.Font("Courier New", 16.0F, btn11.Font.Style ^ FontStyle.Bold);
-            btn11.BackColor = Color.Green;
-            btn11.ForeColor = Color.White;
-            btn11.Text = maps[2, 2];
-
-            btn12.Font = new System.Drawing.Font("Courier New", 16.0F, btn12.Font.Style ^ FontStyle.Bold);
-            btn12.BackColor = Color.Green;
-            btn12.ForeColor = Color.White;
-            btn12.Text = maps[2, 3];
-
-            btn13.Font = new System.Drawing.Font("Courier New", 16.0F, btn13.Font.Style ^ FontStyle.Bold);
-            btn13.BackColor = Color.Green;
-            btn13.ForeColor = Color.White;
-            btn13.Text = maps[3, 0];
-
-            btn14.Font = new System.Drawing.Font("Courier New", 16.0F, btn14.Font.Style ^ FontStyle.Bold);
-            btn14.BackColor = Color.Green;
-            btn14.ForeColor = Color.White;
-            btn14.Text = maps[3, 1];
-
-            btn15.Font = new System.Drawing.Font("Courier New", 16.0F, btn15.Font.Style ^ FontStyle.Bold);
-            btn15.BackColor = Color.Green;
-            btn15.ForeColor = Color.White;
-            btn15.Text = maps[3, 2];
-
-            btn16.Font = new System.Drawing.Font("Courier New", 16.0F, btn16.Font.Style ^ FontStyle.Bold);
-            btn16.BackColor = Color.Green;
-            btn16.ForeColor = Color.White;
-            btn16.Text = maps[3, 3];
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
