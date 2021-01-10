@@ -3,6 +3,7 @@ using Game2048Form.Services;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Game2048Form
@@ -27,7 +28,7 @@ namespace Game2048Form
             int y = 10;
 
 
-            foreach (var item in gamers)
+            foreach (var item in gamers.Take(3))
             {
                 var level = item.Score;
 

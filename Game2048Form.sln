@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game2048Form", "Game2048Form\Game2048Form.csproj", "{89C3ADB4-04A6-4CD9-9C90-7D0127E01302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibGame2048", "..\..\Game2048\LibGame2048\LibGame2048.csproj", "{D9E4F811-90DF-4C9F-8975-D276B59A48E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibGame2048", "LibGame2048\LibGame2048.csproj", "{D9E4F811-90DF-4C9F-8975-D276B59A48E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

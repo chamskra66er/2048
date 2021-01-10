@@ -82,7 +82,7 @@ namespace Game2048Form
                     buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
                 }
             }
-            label1.Text = Model.score.ToString();
+            label1.Text ="Score: "+ Model.score.ToString();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace Game2048Form
         {
             if (e.KeyCode == Keys.Enter) return;
 
-            if (!model.IsGameOver())
+            if (model.IsGameOver())
             {
                 switch (e.KeyCode)
                 {
@@ -118,7 +118,17 @@ namespace Game2048Form
             else
             {
                 MessageBox.Show("Game over...");
+
+                InputForm input = new InputForm();
+                input.score = Model.score.ToString();
+                input.ShowDialog();
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            HistoryForm history = new HistoryForm();
+            history.ShowDialog();
         }
     }
 }

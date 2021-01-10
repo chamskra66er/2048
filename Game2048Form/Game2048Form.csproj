@@ -122,7 +122,7 @@
     <None Include="Resources\korona_50.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Game2048\LibGame2048\LibGame2048.csproj">
+    <ProjectReference Include="..\LibGame2048\LibGame2048.csproj">
       <Project>{d9e4f811-90df-4c9f-8975-d276b59a48e8}</Project>
       <Name>LibGame2048</Name>
     </ProjectReference>

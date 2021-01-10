@@ -29,8 +29,7 @@ namespace Game2048Form.Services
             var newGamer = new Gamer()
             {
                 Name = gamer.Name,
-                Score = gamer.Score,
-                DateTimes = DateTime.Now
+                Score = gamer.Score
             };
 
             using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))

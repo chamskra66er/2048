@@ -22,12 +22,12 @@ namespace Game2048Form
             set { textBox1.Text = value; }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             var gamer = new Gamer()
             {
-                Name = textBox1.Text,
-                Score = Convert.ToInt32(label3.Text)
+                Name = name,
+                Score = int.Parse(label3.Text)
             };
             var model = new Serializ();
             model.DataSave(gamer);
