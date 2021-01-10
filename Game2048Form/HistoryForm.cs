@@ -49,7 +49,17 @@ namespace Game2048Form
                 label1.ForeColor = System.Drawing.Color.White;
                 label1.Font = new Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 panel1.Controls.Add(label1);
-                                                    
+
+                TimeSpan result = TimeSpan.FromSeconds(item.Time);
+                Label label2 = new Label();
+                label2.Left = x+70;
+                label2.Top = y;
+                label2.Text = result.ToString("mm':'ss");
+                label2.AutoSize = true;
+                label2.ForeColor = System.Drawing.Color.White;
+                label2.Font = new Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                panel1.Controls.Add(label2);
+
                 if (level>=7000)
                 {
                     CreatePicture(3, true, y);

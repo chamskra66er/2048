@@ -15,7 +15,7 @@ namespace Game2048Form
     {
         const int size = 4;
         private Model model;
-        public int timeGame { get; private set; } = 0;
+        public static int timeGame { get; private set; } = 0;
         private Button[,] buttons;
 
         public MainForm()
@@ -120,8 +120,10 @@ namespace Game2048Form
             }
             else
             {
-                MessageBox.Show("Game over...");
+                timer1.Stop();
 
+                MessageBox.Show("Game over...");
+                
                 InputForm input = new InputForm();
                 input.score = Model.score.ToString();
                 input.ShowDialog();

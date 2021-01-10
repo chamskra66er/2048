@@ -27,7 +27,8 @@ namespace Game2048Form
             var gamer = new Gamer()
             {
                 Name = name,
-                Score = int.Parse(label3.Text)
+                Score = int.Parse(label3.Text),
+                Time = MainForm.timeGame
             };
             var model = new Serializ();
             model.DataSave(gamer);
