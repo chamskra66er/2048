@@ -15,7 +15,7 @@ namespace Game2048Form
     {
         const int size = 4;
         private Model model;
-        private bool isActive = true;
+        public int timeGame { get; private set; }
         private Button[,] buttons;
 
         public MainForm()
@@ -23,6 +23,7 @@ namespace Game2048Form
             InitializeComponent();
 
             model =new Model(size);
+
             buttons = new Button[size, size];
             buttons[0, 0] = btn1;
             buttons[0, 1] = btn2;
@@ -88,6 +89,8 @@ namespace Game2048Form
         private void MainForm_Load(object sender, EventArgs e)
         {
             Start();
+
+            this.Invoke(new EventHandler(timer1_Tick));
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
@@ -129,6 +132,15 @@ namespace Game2048Form
         {
             HistoryForm history = new HistoryForm();
             history.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Start();
+
+            timeGame += 1;
+            TimeSpan result = TimeSpan.FromSeconds(timeGame);
+            label2.Text = result.ToString("mm':'ss");
         }
     }
 }
