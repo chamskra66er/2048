@@ -94,7 +94,7 @@ namespace Game2048Form
         {
             if (e.KeyCode == Keys.Enter) return;
 
-            if (model.IsGameOver())
+            if (!model.IsGameOver())
             {
                 switch (e.KeyCode)
                 {

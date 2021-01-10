@@ -28,7 +28,7 @@ namespace Game2048Form
             int y = 10;
 
 
-            foreach (var item in gamers.Take(3))
+            foreach (var item in gamers.Take(7))
             {
                 var level = item.Score;
 
