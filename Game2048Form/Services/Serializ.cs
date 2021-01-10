@@ -23,13 +23,11 @@ namespace Game2048Form.Services
         }
         public void DataSave(Gamer gamer)
         {
-            //string name = gamer.Name;
-            //var model = GetAllGamers().Where(x=>x.Name==name);
-
             var newGamer = new Gamer()
             {
                 Name = gamer.Name,
-                Score = gamer.Score
+                Score = gamer.Score,
+                Time = gamer.Time
             };
 
             using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
@@ -43,6 +41,7 @@ namespace Game2048Form.Services
                 }
             }
 
+            #region test
             //if (model.Count()==0)
             //{
             //    using (FileStream file = new FileStream(path, FileMode.OpenOrCreate))
@@ -71,6 +70,7 @@ namespace Game2048Form.Services
             //        }
             //    }
             //}
+            #endregion
 
         }
         public List<Gamer> GetAllGamers()
@@ -87,7 +87,6 @@ namespace Game2048Form.Services
         public IEnumerable<Gamer> GetAllByOrder()
         {
             var model = GetAllGamers();
-
             return model.OrderByDescending(x => x.Score);
         }
         
