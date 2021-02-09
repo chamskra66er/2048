@@ -1,3 +1,5 @@
 "Game2048" 
 
 Widely known game 2048 on WinForms
+
+<img src="https://github.com/chamskra66er/2048/tree/master/Game2048Form/Resources/main.png?raw=true" />
