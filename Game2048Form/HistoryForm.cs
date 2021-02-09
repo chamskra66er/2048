@@ -19,7 +19,7 @@ namespace Game2048Form
 
         private void HistoryForm_Load(object sender, EventArgs e)
         {
-            var model = _serialize.GetAllByOrder();
+            var model = _serialize.GetAllByOrder().OrderByDescending(x=>x.Score);
             CreateGamersControls(model);
         }
         private void CreateGamersControls(IEnumerable<Gamer> gamers)
@@ -28,7 +28,7 @@ namespace Game2048Form
             int y = 10;
 
 
-            foreach (var item in gamers.Take(7))
+            foreach (var item in gamers.Take(10))
             {
                 var level = item.Score;
 
