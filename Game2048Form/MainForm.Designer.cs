@@ -30,6 +30,7 @@ namespace Game2048Form
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@ namespace Game2048Form
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSound = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn1
@@ -280,12 +282,28 @@ namespace Game2048Form
             this.label2.TabIndex = 18;
             this.label2.Text = "time";
             // 
+            // btnSound
+            // 
+            this.btnSound.BackColor = System.Drawing.Color.Transparent;
+            this.btnSound.FlatAppearance.BorderSize = 0;
+            this.btnSound.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSound.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSound.Image = ((System.Drawing.Image)(resources.GetObject("btnSound.Image")));
+            this.btnSound.Location = new System.Drawing.Point(129, 346);
+            this.btnSound.Name = "btnSound";
+            this.btnSound.Size = new System.Drawing.Size(37, 30);
+            this.btnSound.TabIndex = 19;
+            this.btnSound.UseVisualStyleBackColor = false;
+            this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(339, 387);
+            this.Controls.Add(this.btnSound);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
@@ -337,5 +355,6 @@ namespace Game2048Form
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSound;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibGame2048;
+using System.Media;
 
 namespace Game2048Form
 {
@@ -15,8 +16,11 @@ namespace Game2048Form
     {
         const int size = 4;
         private Model model;
+        private bool isSound = true;
         public static int timeGame { get; private set; } = 0;
         private Button[,] buttons;
+
+        private static SoundPlayer sound = new SoundPlayer(Properties.Resources._2_2);
 
         public MainForm()
         {
@@ -41,12 +45,23 @@ namespace Game2048Form
             buttons[3, 1] = btn14;
             buttons[3, 2] = btn15;
             buttons[3, 3] = btn16;
+
+
         }
 
         private void Start()
         {          
             model.Start();
             UpdateButtons();
+        }
+
+        private void SoundPlay()
+        {
+            if(isSound)
+            {
+                sound.Play();
+                Task.Delay(100);
+            }
         }
         private void UpdateButtons()
         {
@@ -95,22 +110,25 @@ namespace Game2048Form
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) return;
-
+            if (e.KeyCode == Keys.Enter) return;           
             if (!model.IsGameOver())
             {
                 switch (e.KeyCode)
                 {
                     case Keys.Up:
+                        SoundPlay();
                         model.Up();
                         break;
                     case Keys.Down:
+                        SoundPlay();
                         model.Down();
                         break;
                     case Keys.Left:
+                        SoundPlay();
                         model.Left();
                         break;
                     case Keys.Right:
+                        SoundPlay();
                         model.Right();                      
                         break;
                     default:
@@ -143,6 +161,20 @@ namespace Game2048Form
             timeGame += 1;
             TimeSpan result = TimeSpan.FromSeconds(timeGame);
             label2.Text = result.ToString("mm':'ss");
+        }
+
+        private void btnSound_Click(object sender, EventArgs e)
+        {
+            if(isSound)
+            {
+                btnSound.Image = Properties.Resources.soundOff_30;
+                isSound = false;
+            }
+            else
+            {
+                btnSound.Image = Properties.Resources.sound_30;
+                isSound = true;
+            }
         }
     }
 }

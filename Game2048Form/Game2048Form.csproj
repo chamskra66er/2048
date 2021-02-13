@@ -118,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chrome_IDR_X003_INCOGNITO.ico" />
+    <None Include="Resources\2_2.wav" />
+    <None Include="Resources\sound_30.png" />
+    <None Include="Resources\soundOff_30.png" />
     <None Include="Resources\zvezda_50.png" />
     <None Include="Resources\korona_50.png" />
   </ItemGroup>

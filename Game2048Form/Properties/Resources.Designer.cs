@@ -61,11 +61,40 @@ namespace Game2048Form.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _2_2 {
+            get {
+                return ResourceManager.GetStream("_2_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap korona_50 {
             get {
                 object obj = ResourceManager.GetObject("korona_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sound_30 {
+            get {
+                object obj = ResourceManager.GetObject("sound_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap soundOff_30 {
+            get {
+                object obj = ResourceManager.GetObject("soundOff_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
