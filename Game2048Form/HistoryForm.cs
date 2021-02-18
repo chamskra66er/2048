@@ -138,10 +138,14 @@ namespace Game2048Form
         {
             var delete = sender as MyLabel;
 
-            Button button = new Button();
+            MyButton button = new MyButton();
             button.Left = delete.Bounds.X + 245;
             button.Top = delete.Bounds.Y;
-            button.Size = new Size(25, 25);           
+            button.Size = new Size(25, 25);
+            button.Number = delete.Number;
+            button.UserName = delete.Text;
+
+            button.Click += new EventHandler(delete_User);
 
             buttons[delete.Number] = button;
             panel1.Controls.Add(button);
@@ -151,14 +155,25 @@ namespace Game2048Form
         {
             await Task.Delay(4500);
 
-            var deletedButtonNumber =(sender as MyLabel).Number; 
+            var deletedButtonNumber = (sender as MyLabel).Number; 
 
             panel1.Controls.Remove(buttons[deletedButtonNumber]);
+        }
+
+        private void delete_User(object sender, EventArgs e)
+        {
+            var userName = (sender as MyButton).UserName;
+            _serialize.DeleteGamers(userName);
         }
     }
 
     public class MyLabel :Label
     {
         public int Number { get; set; }
+    }
+    public class MyButton : Button
+    {
+        public int Number { get; set; } 
+        public string UserName { get; set; }
     }
 }

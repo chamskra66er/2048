@@ -91,11 +91,27 @@ namespace Game2048Form.Services
             return model.OrderByDescending(x => x.Score);
         }
         
-        public async Task DeleteGamers(string name)
+        public void DeleteGamers(string name)
         {
             var model = GetAllGamers();
             var deletedUser = model.Where(x => x.Name == name).FirstOrDefault();
             model.Remove(deletedUser);
+
+            string modelJson = JsonConvert.SerializeObject(model);
+            JsonSerializer serializer = new JsonSerializer();
+
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+
+            using (StreamWriter file = new StreamWriter(path))
+            {
+                using (JsonWriter writer = new JsonTextWriter(file))
+                {
+                    serializer.Serialize(writer,model);
+                }
+            }
         }
     }
 }
