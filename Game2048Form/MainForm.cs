@@ -94,6 +94,7 @@ namespace Game2048Form
                     {
                         buttons[i, j].Text = number.ToString();
                         buttons[i, j].BackColor = Color.Black;
+                        buttons[i, j].ForeColor = Color.White;
                     }
                     buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
                 }

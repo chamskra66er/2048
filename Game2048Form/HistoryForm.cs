@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Game2048Form
@@ -11,6 +12,7 @@ namespace Game2048Form
     public partial class HistoryForm : Form
     {
         private readonly Serializ _serialize;
+        private Button[] buttons = new Button[10];
         public HistoryForm()
         {
             InitializeComponent();
@@ -24,6 +26,8 @@ namespace Game2048Form
         }
         private void CreateGamersControls(IEnumerable<Gamer> gamers)
         {
+            int counter = 0;
+
             int x = 10;
             int y = 10;
 
@@ -32,13 +36,19 @@ namespace Game2048Form
             {
                 var level = item.Score;
 
-                Label label = new Label();
+                MyLabel label = new MyLabel();
                 label.Left = x;
                 label.Top = y;
                 label.Text = item.Name;
                 label.AutoSize = true;
                 label.ForeColor = System.Drawing.Color.White;
                 label.Font = new Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+
+                label.Number = counter;
+                label.MouseEnter += new EventHandler(pictureBox_MouseEnter);
+                label.MouseLeave += new EventHandler(pictureBox_MouseLeave);
+                counter++;
+
                 panel1.Controls.Add(label);
 
                 Label label1 = new Label();
@@ -102,7 +112,7 @@ namespace Game2048Form
                     pictureBox.Top = y;
                     pictureBox.Size = new Size(25, 25);
                     pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBox.Image = Properties.Resources.korona_50;
+                    pictureBox.Image = Properties.Resources.korona_50;                   
 
                     panel1.Controls.Add(pictureBox);
                 }
@@ -123,5 +133,32 @@ namespace Game2048Form
             }           
            
         }
+
+        private void pictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            var delete = sender as MyLabel;
+
+            Button button = new Button();
+            button.Left = delete.Bounds.X + 245;
+            button.Top = delete.Bounds.Y;
+            button.Size = new Size(25, 25);           
+
+            buttons[delete.Number] = button;
+            panel1.Controls.Add(button);
+        }
+
+        private async void pictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            await Task.Delay(4500);
+
+            var deletedButtonNumber =(sender as MyLabel).Number; 
+
+            panel1.Controls.Remove(buttons[deletedButtonNumber]);
+        }
+    }
+
+    public class MyLabel :Label
+    {
+        public int Number { get; set; }
     }
 }
