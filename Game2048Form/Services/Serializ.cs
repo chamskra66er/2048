@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace Game2048Form.Services
 {
@@ -90,6 +91,11 @@ namespace Game2048Form.Services
             return model.OrderByDescending(x => x.Score);
         }
         
-
+        public async Task DeleteGamers(string name)
+        {
+            var model = GetAllGamers();
+            var deletedUser = model.Where(x => x.Name == name).FirstOrDefault();
+            model.Remove(deletedUser);
+        }
     }
 }
