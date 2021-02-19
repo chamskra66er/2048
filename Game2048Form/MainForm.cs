@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibGame2048;
@@ -93,10 +88,9 @@ namespace Game2048Form
                     else if(number >= 2048)
                     {
                         buttons[i, j].Text = number.ToString();
-                        buttons[i, j].BackColor = Color.Black;
-                        buttons[i, j].ForeColor = Color.White;
+                        buttons[i, j].BackColor = Color.Gray;
                     }
-                    buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, buttons[i, j].Font.Style ^ FontStyle.Bold);
+                    buttons[i, j].Font = new System.Drawing.Font("Courier New", 16.0F, FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 }
             }
             label1.Text ="Score: "+ Model.score.ToString();

@@ -60,6 +60,7 @@ namespace Game2048Form
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn1.ForeColor = System.Drawing.Color.White;
             this.btn1.Location = new System.Drawing.Point(3, 3);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(80, 80);
@@ -72,6 +73,7 @@ namespace Game2048Form
             this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn2.ForeColor = System.Drawing.Color.White;
             this.btn2.Location = new System.Drawing.Point(87, 3);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(80, 80);
@@ -84,6 +86,7 @@ namespace Game2048Form
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn4.ForeColor = System.Drawing.Color.White;
             this.btn4.Location = new System.Drawing.Point(255, 3);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(80, 80);
@@ -96,6 +99,7 @@ namespace Game2048Form
             this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn3.ForeColor = System.Drawing.Color.White;
             this.btn3.Location = new System.Drawing.Point(171, 3);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(80, 80);
@@ -108,6 +112,7 @@ namespace Game2048Form
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn8.ForeColor = System.Drawing.Color.White;
             this.btn8.Location = new System.Drawing.Point(255, 87);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(80, 80);
@@ -120,6 +125,7 @@ namespace Game2048Form
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn7.ForeColor = System.Drawing.Color.White;
             this.btn7.Location = new System.Drawing.Point(171, 87);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(80, 80);
@@ -132,6 +138,7 @@ namespace Game2048Form
             this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn6.ForeColor = System.Drawing.Color.White;
             this.btn6.Location = new System.Drawing.Point(87, 87);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(80, 80);
@@ -144,6 +151,7 @@ namespace Game2048Form
             this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn5.ForeColor = System.Drawing.Color.White;
             this.btn5.Location = new System.Drawing.Point(3, 87);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(80, 80);
@@ -156,6 +164,7 @@ namespace Game2048Form
             this.btn12.FlatAppearance.BorderSize = 0;
             this.btn12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn12.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn12.ForeColor = System.Drawing.Color.White;
             this.btn12.Location = new System.Drawing.Point(255, 171);
             this.btn12.Name = "btn12";
             this.btn12.Size = new System.Drawing.Size(80, 80);
@@ -168,6 +177,7 @@ namespace Game2048Form
             this.btn11.FlatAppearance.BorderSize = 0;
             this.btn11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn11.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn11.ForeColor = System.Drawing.Color.White;
             this.btn11.Location = new System.Drawing.Point(171, 171);
             this.btn11.Name = "btn11";
             this.btn11.Size = new System.Drawing.Size(80, 80);
@@ -180,6 +190,7 @@ namespace Game2048Form
             this.btn10.FlatAppearance.BorderSize = 0;
             this.btn10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn10.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn10.ForeColor = System.Drawing.Color.White;
             this.btn10.Location = new System.Drawing.Point(87, 171);
             this.btn10.Name = "btn10";
             this.btn10.Size = new System.Drawing.Size(80, 80);
@@ -192,6 +203,7 @@ namespace Game2048Form
             this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn9.ForeColor = System.Drawing.Color.White;
             this.btn9.Location = new System.Drawing.Point(3, 171);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(80, 80);
@@ -204,6 +216,7 @@ namespace Game2048Form
             this.btn16.FlatAppearance.BorderSize = 0;
             this.btn16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn16.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn16.ForeColor = System.Drawing.Color.White;
             this.btn16.Location = new System.Drawing.Point(255, 255);
             this.btn16.Name = "btn16";
             this.btn16.Size = new System.Drawing.Size(80, 80);
@@ -216,6 +229,7 @@ namespace Game2048Form
             this.btn15.FlatAppearance.BorderSize = 0;
             this.btn15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn15.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn15.ForeColor = System.Drawing.Color.White;
             this.btn15.Location = new System.Drawing.Point(171, 255);
             this.btn15.Name = "btn15";
             this.btn15.Size = new System.Drawing.Size(80, 80);
@@ -228,6 +242,7 @@ namespace Game2048Form
             this.btn14.FlatAppearance.BorderSize = 0;
             this.btn14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn14.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn14.ForeColor = System.Drawing.Color.White;
             this.btn14.Location = new System.Drawing.Point(87, 255);
             this.btn14.Name = "btn14";
             this.btn14.Size = new System.Drawing.Size(80, 80);
@@ -240,6 +255,7 @@ namespace Game2048Form
             this.btn13.FlatAppearance.BorderSize = 0;
             this.btn13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn13.Font = new System.Drawing.Font("Poiret One", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn13.ForeColor = System.Drawing.Color.White;
             this.btn13.Location = new System.Drawing.Point(3, 255);
             this.btn13.Name = "btn13";
             this.btn13.Size = new System.Drawing.Size(80, 80);
