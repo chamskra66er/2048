@@ -139,11 +139,15 @@ namespace Game2048Form
             var delete = sender as MyLabel;
 
             MyButton button = new MyButton();
-            button.Left = delete.Bounds.X + 245;
+            button.Left = delete.Bounds.X + 250;
             button.Top = delete.Bounds.Y;
             button.Size = new Size(25, 25);
             button.Number = delete.Number;
             button.UserName = delete.Text;
+            button.BackgroundImage = Properties.Resources.trash_25;
+            button.BackgroundImageLayout = ImageLayout.Zoom;
+            button.FlatAppearance.BorderSize = 0;
+            button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 
             button.Click += new EventHandler(delete_User);
 
@@ -160,10 +164,13 @@ namespace Game2048Form
             panel1.Controls.Remove(buttons[deletedButtonNumber]);
         }
 
-        private void delete_User(object sender, EventArgs e)
+        private async void delete_User(object sender, EventArgs e)
         {
             var userName = (sender as MyButton).UserName;
             _serialize.DeleteGamers(userName);
+
+            await Task.Delay(200);
+            this.Close();
         }
     }
 

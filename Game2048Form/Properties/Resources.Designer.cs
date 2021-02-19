@@ -102,6 +102,16 @@ namespace Game2048Form.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap trash_25 {
+            get {
+                object obj = ResourceManager.GetObject("trash_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap zvezda_50 {
             get {
                 object obj = ResourceManager.GetObject("zvezda_50", resourceCulture);

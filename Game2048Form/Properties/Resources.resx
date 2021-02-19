@@ -127,6 +127,9 @@
   <data name="sound_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sound_30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="trash_25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash_25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zvezda_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zvezda_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
